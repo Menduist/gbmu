@@ -33,6 +33,9 @@ int init_gbmu(struct gbmu *gbmu, char *path)
 	gbmu->cpu.registers.hl = 0x014D;
 	gbmu->cpu.registers.pc = 0x0100;
 	gbmu->cpu.registers.sp = 0xFFFE;
+	dump_instructions(stdout);
+
+	//gbmu->show_instructions = -1;
 	return (0);
 }
 
@@ -47,6 +50,8 @@ int main(int argc, char **argv)
 	}
 	init_gbmu(&gbmu, argv[1]);
 	while (cpu_step(&gbmu) == 0) {
-		gpu_step(&gbmu);	
+		gpu_step(&gbmu);
+		if (gbmu.gpu.ticks % 100 == 0)
+			update_inputs(&gbmu);
 	}
 }

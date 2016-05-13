@@ -32,8 +32,11 @@ int cpu_step(struct gbmu *gbmu)
 	instruction = &instructions[opcode];
 	if (instruction->func == 0) {
 		fprintf(stderr, "%04x: WARNING: unknown opcode %02x\n", pc, opcode);
-		while (1);
 		return (1);
+	}
+
+	if (pc == 0x2A18) {
+		printf("lol %x\n", read_byte(&gbmu->ram, 0xFF00));
 	}
 
 	gbmu->cpu.registers.pc += 1 + instruction->paramcount;

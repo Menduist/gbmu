@@ -1,0 +1,256 @@
+op(nop, 0, NOP) //0
+op(ld_bc_nn, 2, LD(BC, NN)) /* 0x01  */
+noop(0, 0, 0) /* 0x02  */
+op(inc_bc, 0, INC(BC)) /* 0x03  */
+op(inc_b, 0, INC8(B)) /* 0x04  */
+op(dec_b, 0, DEC8(B)) /* 0x05  */
+op(ld_b_n, 1, LD(B, N)) /* 0x06  */
+op(rlca, 0, RLCA(A)) /* 0x07  */
+op(ld_nnp_sp, 2, WRITE(NN, SP)) /* 0x08  */
+op(add_hl_bc, 0, ADD(HL, BC)) /* 0x09  */
+op(ld_a_bcp, 0, LD(A, READ(BC))) /* 0x0a  */
+op(dec_bc, 0, DEC(BC)) /* 0x0b  */
+op(inc_c, 0, INC8(C)) /* 0x0c  */
+op(dec_c, 0, DEC8(C)) /* 0x0d  */
+op(ld_c_n, 1, LD(C, N)) /* 0x0e  */
+noop(0, 0, 0) /* 0x0f  */
+noop(0, 0, 0) /* 0x10  */
+op(ld_de_nn, 2, LD(DE, NN)) /* 0x11  */
+op(ld_dep_a, 0, WRITE(DE, A)) /* 0x12  */
+op(inc_de, 0, INC(DE)) /* 0x13  */
+noop(0, 0, 0) /* 0x14  */
+noop(0, 0, 0) /* 0x15  */
+op(ld_d_n, 1, LD(D, N)) /* 0x16  */
+noop(0, 0, 0) /* 0x17  */
+op(jr_n, 1, JR(N)) /* 0x18  */
+op(add_hl_de, 0, ADD(HL, DE)) /* 0x19  */
+op(ld_a_dep, 0, LD(A, READ(DE))) /* 0x1a  */
+op(dec_de, 0, DEC(DE)) /* 0x1b  */
+op(inc_e, 0, INC(E)) /* 0x1c  */
+noop(0, 0, 0) /* 0x1d  */
+noop(0, 0, 0) /* 0x1e  */
+noop(0, 0, 0) /* 0x1f  */
+op(jr_nz_n, 1, NZ(JR(N))) /* 0x20  */
+op(ld_hl_nn, 2, LD(HL, NN)) /* 0x21  */
+op(ld_hli_a, 0, WRITE(INC(HL), A)) /* 0x22  */
+op(inc_hl, 0, INC(HL)) /* 0x23  */
+noop(0, 0, 0) /* 0x24  */
+op(dec_h, 0, DEC8(H)) /* 0x25  */
+op(ld_h_n, 1, LD(H, N)) /* 0x26  */
+noop(0, 0, 0) /* 0x27  */
+op(jr_z_n, 1, IZ(JR(N))) /* 0x28  */
+noop(0, 0, 0) /* 0x29  */
+op(ld_a_hli, 0, LD(A, READ(INC(HL)))) /* 0x2a  */
+op(dec_hl, 0, DEC(HL)) /* 0x2b  */
+op(inc_l, 0, INC(L)) /* 0x2c  */
+op(dec_l, 0, DEC(L)) /* 0x2d  */
+noop(0, 0, 0) /* 0x2e  */
+op(cpl, 0, CPL(A)) /* 0x2f  */
+op(jr_nc_n, 1, NC(JR(N))) /* 0x30  */
+op(ld_sp_nn, 2, LD(SP, NN)) /* 0x31  */
+op(ld_hld_a, 0, WRITE(DEC(HL), A)) /* 0x32  */
+noop(0, 0, 0) /* 0x33  */
+op(inc_hlp, 0, WRITE(HL, INCG(READ(HL)))) /* 0x34  */
+op(dec_hlp, 0, WRITE(HL, DECG(READ(HL)))) /* 0x35  */
+op(ld_hlp_n, 1, WRITE(HL, N)) /* 0x36  */
+noop(0, 0, 0) /* 0x37  */
+op(jr_c_n, 1, IC(JR(N))) /* 0x38  */
+op(add_hl_sp, 0, ADD(HL, SP)) /* 0x39  */
+op(ld_a_hld, 0, LD(A, READ(DEC(HL)))) /* 0x3a  */
+op(dec_sp, 0, DEC(SP)) /* 0x3b  */
+op(inc_a, 0, INC(A)) /* 0x3c  */
+op(dec_a, 0, DEC8(A)) /* 0x3d  */
+op(ld_a_n, 1, LD(A, N)) /* 0x3e  */
+noop(0, 0, 0) /* 0x3f  */
+op(ld_b_b, 0, LD(B, B)) /* 0x40  */
+noop(0, 0, 0) /* 0x41  */
+noop(0, 0, 0) /* 0x42  */
+noop(0, 0, 0) /* 0x43  */
+noop(0, 0, 0) /* 0x44  */
+noop(0, 0, 0) /* 0x45  */
+op(ld_b_hlp, 0, LD(B, READ(HL))) /* 0x46  */
+op(ld_b_a, 0, LD(B, A)) /* 0x47  */
+noop(0, 0, 0) /* 0x48  */
+noop(0, 0, 0) /* 0x49  */
+noop(0, 0, 0) /* 0x4a  */
+noop(0, 0, 0) /* 0x4b  */
+noop(0, 0, 0) /* 0x4c  */
+noop(0, 0, 0) /* 0x4d  */
+op(ld_c_hlp, 0, LD(C, READ(HL))) /* 0x4e  */
+op(ld_c_a, 0, LD(C, A)) /* 0x4f  */
+noop(0, 0, 0) /* 0x50  */
+noop(0, 0, 0) /* 0x51  */
+noop(0, 0, 0) /* 0x52  */
+noop(0, 0, 0) /* 0x53  */
+op(ld_d_h, 0, LD(D, H)) /* 0x54  */
+noop(0, 0, 0) /* 0x55  */
+op(ld_d_hlp, 0, D = READ(HL)) /* 0x56  */
+op(ld_d_a, 0, LD(D, A)) /* 0x57  */
+noop(0, 0, 0) /* 0x58  */
+noop(0, 0, 0) /* 0x59  */
+noop(0, 0, 0) /* 0x5a  */
+noop(0, 0, 0) /* 0x5b  */
+noop(0, 0, 0) /* 0x5c  */
+noop(0, 0, 0) /* 0x5d  */
+op(ld_e_hlp, 0, LD(E, READ(HL))) /* 0x5e  */
+op(ld_e_a, 0, LD(E, A)) /* 0x5f  */
+op(ld_h_b, 0, LD(H, B)) /* 0x60  */
+noop(0, 0, 0) /* 0x61  */
+noop(0, 0, 0) /* 0x62  */
+noop(0, 0, 0) /* 0x63  */
+noop(0, 0, 0) /* 0x64  */
+noop(0, 0, 0) /* 0x65  */
+noop(0, 0, 0) /* 0x66  */
+op(ld_h_a, 0, LD(H, A)) /* 0x67  */
+noop(0, 0, 0) /* 0x68  */
+op(ld_l_c, 0, LD(L, C)) /* 0x69  */
+noop(0, 0, 0) /* 0x6a  */
+noop(0, 0, 0) /* 0x6b  */
+noop(0, 0, 0) /* 0x6c  */
+noop(0, 0, 0) /* 0x6d  */
+noop(0, 0, 0) /* 0x6e  */
+op(ld_l_a, 0, LD(L,A)) /* 0x6f  */
+noop(0, 0, 0) /* 0x70  */
+op(ld_hlp_c, 0, WRITE(INC(HL), C)) /* 0x71  */
+op(ld_hlp_d, 0, WRITE(INC(HL), E)) /* 0x72  */
+op(ld_hlp_e, 0, WRITE(INC(HL), E)) /* 0x73  */
+noop(0, 0, 0) /* 0x74  */
+noop(0, 0, 0) /* 0x75  */
+noop(0, 0, 0) /* 0x76  */
+op(ld_hlp_a, 0, WRITE(HL, A)) /* 0x77  */
+op(ld_a_b, 0, LD(A, B)) /* 0x78  */
+op(ld_a_c, 0, LD(A, C)) /* 0x79  */
+op(ld_a_d, 0, LD(A, D)) /* 0x7a  */
+op(ld_a_e, 0, LD(A, E)) /* 0x7b  */
+op(ld_a_h, 0, LD(A, H)) /* 0x7c  */
+op(ld_a_l, 0, LD(A, L)) /* 0x7d  */
+op(ld_a_hlp, 0, LD(A, READ(HL))) /* 0x7e  */
+noop(0, 0, 0) /* 0x7f  */
+op(add_a_b, 0, ADD8(A, B)) /* 0x80  */
+noop(0, 0, 0) /* 0x81  */
+noop(0, 0, 0) /* 0x82  */
+noop(0, 0, 0) /* 0x83  */
+noop(0, 0, 0) /* 0x84  */
+op(add_a_l, 0, ADD8(A, L)) /* 0x85  */
+noop(0, 0, 0) /* 0x86  */
+op(add_a_a, 0, ADD8(A, A)) /* 0x87  */
+noop(0, 0, 0) /* 0x88  */
+noop(0, 0, 0) /* 0x89  */
+noop(0, 0, 0) /* 0x8a  */
+noop(0, 0, 0) /* 0x8b  */
+noop(0, 0, 0) /* 0x8c  */
+noop(0, 0, 0) /* 0x8d  */
+noop(0, 0, 0) /* 0x8e  */
+noop(0, 0, 0) /* 0x8f  */
+op(sub_b, 0, SUB(B)) /* 0x90  */
+noop(0, 0, 0) /* 0x91  */
+noop(0, 0, 0) /* 0x92  */
+noop(0, 0, 0) /* 0x93  */
+noop(0, 0, 0) /* 0x94  */
+noop(0, 0, 0) /* 0x95  */
+op(sub_hlp, 0, SUB(READ(HL))) /* 0x96  */
+noop(0, 0, 0) /* 0x97  */
+noop(0, 0, 0) /* 0x98  */
+op(sbc_c, 0, SBC(C)) /* 0x99  */
+noop(0, 0, 0) /* 0x9a  */
+noop(0, 0, 0) /* 0x9b  */
+noop(0, 0, 0) /* 0x9c  */
+noop(0, 0, 0) /* 0x9d  */
+noop(0, 0, 0) /* 0x9e  */
+noop(0, 0, 0) /* 0x9f  */
+op(and_b, 0, AND(B)) /* 0xa0  */
+op(and_c, 0, AND(C)) /* 0xa1  */
+noop(0, 0, 0) /* 0xa2  */
+noop(0, 0, 0) /* 0xa3  */
+noop(0, 0, 0) /* 0xa4  */
+noop(0, 0, 0) /* 0xa5  */
+noop(0, 0, 0) /* 0xa6  */
+op(and_a, 0, AND(A)) /* 0xa7  */
+op(xor_b, 0, XOR(B)) /* 0xa8  */
+op(xor_c, 0, XOR(C)) /* 0xa9  */
+noop(0, 0, 0) /* 0xaa  */
+noop(0, 0, 0) /* 0xab  */
+noop(0, 0, 0) /* 0xac  */
+noop(0, 0, 0) /* 0xad  */
+noop(0, 0, 0) /* 0xae  */
+op(xor_a, 0, XOR(A)) /* 0xaf  */
+op(or_b, 0, OR(B)) /* 0xb0  */
+op(or_c, 0, OR(C)) /* 0xb1  */
+noop(0, 0, 0) /* 0xb2  */
+noop(0, 0, 0) /* 0xb3  */
+noop(0, 0, 0) /* 0xb4  */
+noop(0, 0, 0) /* 0xb5  */
+noop(0, 0, 0) /* 0xb6  */
+noop(0, 0, 0) /* 0xb7  */
+op(cp_b, 0, CP(B)) /* 0xb8  */
+noop(0, 0, 0) /* 0xb9  */
+noop(0, 0, 0) /* 0xba  */
+noop(0, 0, 0) /* 0xbb  */
+noop(0, 0, 0) /* 0xbc  */
+noop(0, 0, 0) /* 0xbd  */
+noop(0, 0, 0) /* 0xbe  */
+noop(0, 0, 0) /* 0xbf  */
+op(ret_nz, 0, NZ(RET)) /* 0xc0  */
+op(pop_bc, 0, BC = POP_SHORT) /* 0xc1  */
+op(jp_nz_nn, 2, NZ(JP(NN))) /* 0xc2  */
+op(jp_nn, 2, JP(NN)) /* 0xc3  */
+noop(0, 0, 0) /* 0xc4  */
+op(push_bc, 0, PUSH_SHORT(BC)) /* 0xc5  */
+op(add_a_n, 1, ADD8(A, N)) /* 0xc6  */
+noop(0, 0, 0) /* 0xc7  */
+op(ret_z, 0, IZ(RET)) /* 0xc8  */
+op(ret, 0, RET) /* 0xc9  */
+op(jp_z_nn, 2, IZ(JP(NN))) /* 0xca  */
+op(motherfucker, 1, NOP) /* 0xcb  */
+noop(0, 0, 0) /* 0xcc  */
+op(call_nn, 2, CALL(NN)) /* 0xcd  */
+noop(0, 0, 0) /* 0xce  */
+noop(0, 0, 0) /* 0xcf  */
+noop(0, 0, 0) /* 0xd0  */
+op(pop_de, 0, DE = POP_SHORT) /* 0xd1  */
+noop(0, 0, 0) /* 0xd2  */
+noop(0, 0, 0) /* 0xd3  */
+noop(0, 0, 0) /* 0xd4  */
+op(push_de, 0, PUSH_SHORT(DE)) /* 0xd5  */
+op(sub_n, 1, SUB(N)) /* 0xd6  */
+noop(0, 0, 0) /* 0xd7  */
+noop(0, 0, 0) /* 0xd8  */
+op(reti, 0, RET; EI) /* 0xd9  */
+noop(0, 0, 0) /* 0xda  */
+noop(0, 0, 0) /* 0xdb  */
+noop(0, 0, 0) /* 0xdc  */
+noop(0, 0, 0) /* 0xdd  */
+op(sbc_n, 1, SBC(N)) /* 0xde  */
+noop(0, 0, 0) /* 0xdf  */
+op(ld_ff_n_a, 1, WRITE(0xFF00 + N, A)) /* 0xe0  */
+op(pop_hl, 0, HL = POP_SHORT) /* 0xe1  */
+op(ld_ff_c_a, 0, WRITE(0xFF00 + C, A)) /* 0xe2  */
+noop(0, 0, 0) /* 0xe3  */
+noop(0, 0, 0) /* 0xe4  */
+op(push_hl, 0, PUSH_SHORT(HL)) /* 0xe5  */
+op(and_n, 1, AND(N)) /* 0xe6  */
+noop(0, 0, 0) /* 0xe7  */
+noop(0, 0, 0) /* 0xe8  */
+op(jp_hlp, 0, JP(HL)) /* 0xe9  */
+op(ld_nnp_a, 2, WRITE(NN, A)) /* 0xea  */
+noop(0, 0, 0) /* 0xeb  */
+noop(0, 0, 0) /* 0xec  */
+noop(0, 0, 0) /* 0xed  */
+op(xor_n, 1, XOR(N)) /* 0xee  */
+op(rst_28, 0, RST(0x28)) /* 0xef  */
+op(ld_a_ff_n, 1, LD(A, READ(0xFF00 + N))) /* 0xf0  */
+op(pop_af, 0, AF = POP_SHORT) /* 0xf1  */
+noop(0, 0, 0) /* 0xf2  */
+op(di, 0, DI) /* 0xf3  */
+noop(0, 0, 0) /* 0xf4  */
+op(push_af, 0, PUSH_SHORT(AF)) /* 0xf5  */
+noop(0, 0, 0) /* 0xf6  */
+noop(0, 0, 0) /* 0xf7  */
+noop(0, 0, 0) /* 0xf8  */
+noop(0, 0, 0) /* 0xf9  */
+op(ld_a_nnp, 2, LD(A, READ(NN))) /* 0xfa  */
+op(ei, 0, EI) /* 0xfb  */
+noop(0, 0, 0) /* 0xfc  */
+noop(0, 0, 0) /* 0xfd  */
+op(cp_n, 1, CP(N)) /* 0xfe  */
+op(rst_38, 0, RST(0x38)) /* 0xff  */

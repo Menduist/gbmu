@@ -1,12 +1,12 @@
 NAME=gmbu
 
-SRCS=gbmu.c cart.c ram.c cpu.c instructions.c gpu.c
+SRCS=gbmu.c cart.c ram.c cpu.c instructions.c gpu.c input.c
 OBJS=$(SRCS:.c=.o)
 
-HEADERS=gbmu.h cart.h ram.h cpu.h instructions.h gpu.h
+HEADERS=gbmu.h cart.h ram.h cpu.h instructions.h gpu.h opcodes input.h
 
 C=gcc
-CFLAGS=-Wall -Werror -Wextra -lSDL
+CFLAGS=-Werror -Wall -Wextra -lSDL -g
 
 all: $(NAME)
 

@@ -12,5 +12,6 @@ struct instruction {
 };
 
 extern struct instruction instructions[256];
+void dump_instructions(FILE *f);
 
 #endif

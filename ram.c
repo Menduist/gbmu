@@ -10,6 +10,7 @@ int init_ram(struct ram *ram)
 
 unsigned char read_byte(struct ram *ram, int position)
 {
+	//if (position == 0xff00) __asm("int $3");
 	return ram->memory[position];
 }
 
